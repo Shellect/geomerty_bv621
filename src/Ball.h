@@ -2,6 +2,7 @@
 #define BALL
 
 #include <SFML/Graphics.hpp>
+#include <optional>
 #include <random>
 #include <string>
 #include "Collision.h"
@@ -14,7 +15,7 @@ private:
     float speed = 300.f;                      // базовая скорость мяча
     std::mt19937 rng{std::random_device{}()}; // ГПСЧ
     sf::Texture texture;
-    sf::Sprite sprite;
+    std::optional<sf::Sprite> sprite;
     sf::Vector2f velocity{300.f, 220.f};
 
     // Переопределяем отрисовку

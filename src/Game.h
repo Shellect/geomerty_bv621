@@ -4,6 +4,7 @@
 #include "Ball.h"
 #include "Paddle.h"
 #include <SFML/Graphics.hpp>
+#include <optional>
 
 class Game
 {
@@ -15,6 +16,11 @@ private:
 
 	int leftScore = 0;
 	int rightScore = 0;
+	sf::Font font;
+	std::optional<sf::Text> scoreText;
+
+	void updateScoreText();
+	void centerWindowOnCursorScreen();
 
 public:
 	Game();
